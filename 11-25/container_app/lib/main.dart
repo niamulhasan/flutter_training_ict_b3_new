@@ -18,24 +18,59 @@ class MyContainerApp extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           color: Colors.redAccent,
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 180,
-                color: Colors.teal,
-              ),
-              Container(
-                width: double.infinity,
-                height: 180,
-                color: Colors.amber,
-              ),
-              Container(
-                width: double.infinity,
-                height: 180,
-                color: Colors.deepPurple,
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Container(
+                    width: double.infinity,
+                    height: 180,
+                    color: Colors.teal,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                    width: double.infinity,
+                    height: 180,
+                    color: Colors.amber,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                    width: double.infinity,
+                    height: 180,
+                    color: Colors.deepPurple,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Container(
+                    width: double.infinity,
+                    height: 180,
+                    color: Colors.teal,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                    width: double.infinity,
+                    height: 180,
+                    color: Colors.amber,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                    width: double.infinity,
+                    height: 180,
+                    color: Colors.deepPurple,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
