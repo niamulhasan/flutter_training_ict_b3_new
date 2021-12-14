@@ -17,24 +17,34 @@ class MyApp extends StatelessWidget {
           height: double.infinity,
           width: double.infinity,
           child: ListView(
-            children: const [
+            children: [
               MyContactTile(
                 color: Colors.redAccent,
                 name: "Akkas Ali",
                 email: "akkas@akkmail.com",
                 chinnho: Icon(Icons.call),
               ),
-              MyContactTile(
-                chinnho: Icon(Icons.call_end),
-                color: Colors.green,
-                name: "Jhakkas Ali",
-                email: "ali@jhakkas.com",
+              GestureDetector(
+                onTap: () {
+                  print("2nd card tapped!");
+                },
+                child: MyContactTile(
+                  chinnho: Icon(Icons.call_end),
+                  color: Colors.green,
+                  name: "Jhakkas Ali",
+                  email: "ali@jhakkas.com",
+                ),
               ),
-              MyContactTile(
-                color: Colors.white,
-                name: "Normal Ali",
-                email: "normal@normi.com",
-                chinnho: Icon(Icons.call_made),
+              InkWell(
+                onTap: () {
+                  print("Ink well tapped!");
+                },
+                child: MyContactTile(
+                  color: Colors.transparent,
+                  name: "Normal Ali",
+                  email: "normal@normi.com",
+                  chinnho: Icon(Icons.call_made),
+                ),
               ),
             ],
           ),
