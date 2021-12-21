@@ -55,30 +55,6 @@ class MyPlayerCard extends StatelessWidget {
                             fontSize: 14.0,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 6.0),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.person,
-                                size: 16.0,
-                                color: Colors.white,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  left: 4.0,
-                                ),
-                                child: Text(
-                                  "Bangladesh",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10.0,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
                       ],
                     ),
                   ),
