@@ -52,7 +52,8 @@ class MyPlayerCard extends StatelessWidget {
                           name,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 14.0,
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w300,
                           ),
                         ),
                       ],

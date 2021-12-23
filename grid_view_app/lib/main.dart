@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:grid_view_app/components/data/playes.dart';
 
 import 'components/my_player_card.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final List<Map<String, String>> playersData = PlayersData().data;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,18 +23,15 @@ class MyApp extends StatelessWidget {
           height: double.infinity,
           child: Padding(
             padding: const EdgeInsets.all(10.0),
-            child: GridView.count(
-              crossAxisCount: 2,
-              childAspectRatio: (400 / 505),
-              children: [
-                MyPlayerCard(
-                  name: "Sakib Al Hasan",
-                  chobi: Image.asset("assets/images/player.png"),
-                ),
-                MyPlayerCard(
-                    name: "Mashrafi Bin Murtaza",
-                    chobi: Image.asset("assets/images/players/sakib.png")),
-              ],
+            child: GridView.builder(
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              itemCount: playersData.length,
+              itemBuilder: (BuildContext context, int i) => MyPlayerCard(
+                name: playersData[i]["name"]!,
+                chobi: Image.asset(
+                    "assets/images/players/${playersData[i]["photo"]}"),
+              ),
             ),
           ),
         ),
