@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class MyPlayerCard extends StatelessWidget {
   final String name;
   final Image chobi;
+  final String age;
+  final String role;
 
   const MyPlayerCard({
     Key? key,
     required this.name,
     required this.chobi,
+    required this.age,
+    required this.role,
   }) : super(key: key);
 
   @override
@@ -69,6 +73,32 @@ class MyPlayerCard extends StatelessWidget {
           ),
         ),
         chobi,
+        Padding(
+          padding: const EdgeInsets.only(top: 100.0, left: 30.0, right: 10.0),
+          child: Container(
+            width: double.infinity,
+            // color: Colors.redAccent.withOpacity(0.5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Age: $age",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18.0,
+                  ),
+                ),
+                Text(
+                  "Role: $role",
+                  style: TextStyle(
+                    // fontWeight: FontWeight.w500,
+                    fontSize: 16.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }

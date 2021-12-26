@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grid_view_app/components/data/playes.dart';
-import 'package:grid_view_app/pages/home.dart';
 
-import 'components/my_player_card.dart';
+import 'pages/home.dart';
+import 'pages/next.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +10,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
