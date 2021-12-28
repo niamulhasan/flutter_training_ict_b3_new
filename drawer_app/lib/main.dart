@@ -8,6 +8,31 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
+        drawer: Drawer(
+          child: Column(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: FlutterLogo(
+                    size: 100.0,
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: ListView.builder(
+                    itemCount: 20,
+                    itemBuilder: (context, index) => ListTile(
+                          leading: Icon(Icons.person),
+                          title: Text("I am menu Item $index"),
+                          subtitle: Text("I am the subtitile"),
+                          trailing: Icon(Icons.arrow_forward),
+                        )),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: Text('Material App Bar'),
         ),
