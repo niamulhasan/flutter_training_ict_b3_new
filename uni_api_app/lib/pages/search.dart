@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class SearchPage extends StatelessWidget {
+  final String country;
   const SearchPage({
     Key? key,
+    required this.country,
   }) : super(key: key);
 
-  Future getUniversities() async {
-    http.Response response = await http.get(
-        Uri.parse("http://universities.hipolabs.com/search?country=india"));
+  Future getUniversities(String c) async {
+    http.Response response = await http
+        .get(Uri.parse("http://universities.hipolabs.com/search?country=$c"));
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
@@ -25,10 +27,10 @@ class SearchPage extends StatelessWidget {
         title: Text("Boo"),
       ),
       body: FutureBuilder(
-          future: getUniversities(),
+          future: getUniversities(country),
           builder: (BuildContext context, AsyncSnapshot sn) {
-            List unis = sn.data;
             if (sn.hasData) {
+              List unis = sn.data;
               return ListView.builder(
                 itemCount: unis.length,
                 itemBuilder: (context, index) => Card(
@@ -40,7 +42,7 @@ class SearchPage extends StatelessWidget {
               );
             }
             if (sn.hasError) {
-              return Text("Error Loading Data");
+              return Center(child: Text("Error Loading Data"));
             }
             return Center(
               child: CircularProgressIndicator(),

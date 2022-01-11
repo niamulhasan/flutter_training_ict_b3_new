@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:uni_api_app/pages/search.dart';
 
 class HomePage extends StatelessWidget {
   TextEditingController searchTextController = TextEditingController();
@@ -39,7 +40,13 @@ class HomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                print(searchTextController.text);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => SearchPage(
+                      country: searchTextController.text,
+                    ),
+                  ),
+                );
               },
               child: Text("Search"),
             )
